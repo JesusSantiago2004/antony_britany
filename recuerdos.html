@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorpresa Fotos San Valentin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Alex+Brush&family=Clicker+Script&family=Lovers+Quarrel&family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+    body {
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+        background: rgb(255, 192, 203);
+        overflow: hidden;
+    }
+
+    #encabezado-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 60px;
+    }
+
+    #brillo {
+        font-family: 'Sacramento', cursive;
+
+        font-size: 60px;
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 0, 136, 0.801);
+        z-index: 10;
+        background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+        -webkit-background-size: 150px;
+        -webkit-background-clip: text;
+        -webkit-animation-name: brillo;
+        -webkit-animation-duration: 3s;
+        -webkit-animation-iteration-count: infinite;
+        text-shadow: 0 0px 0px rgba(255, 255, 255, 0);
+    }
+
+    @-webkit-keyframes brillo {
+        0%, 10% { background-position: -1000px; }
+        20% { background-position: top left; }
+        90% { background-position: top right; }
+        100% { background-position: 1000px; }
+    }
+
+    .galeria {
+        --d: 10s; 
+        display: grid;
+        place-items: center;
+        width: 220px;
+        margin-left: 220px;
+    }
+
+    .galeria > img {
+        grid-area: 1/1;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border: 10px solid #40E0D0;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        animation: slide var(--d) infinite, z-order var(--d) infinite steps(1);
+    }
+
+    .galeria img:last-child {
+        animation-name: slide, z-order-last;
+    }
+
+    .galeria > img:nth-child(1) { animation-delay: calc(0 * var(--d)); --r: 16deg; }
+    .galeria > img:nth-child(2) { animation-delay: calc(-0.2 * var(--d)); --r: -1deg; }
+    .galeria > img:nth-child(3) { animation-delay: calc(-0.4 * var(--d)); --r: -19deg; }
+    .galeria > img:nth-child(4) { animation-delay: calc(-0.6 * var(--d)); --r: 6deg; }
+    .galeria > img:nth-child(5) { animation-delay: calc(-0.8 * var(--d)); --r: -8deg; }
+
+
+    @keyframes slide {
+        10% { transform: translateX(120%) rotate(var(--r)); }
+        0%, 100%, 20% { transform: translateX(0%) rotate(var(--r)); }
+    }
+
+    @keyframes z-order {
+        10%, 20% { z-index: 1; }
+        80% { z-index: 2; }
+    }
+
+    @keyframes z-order-last {
+        10%, 20% { z-index: 1; }
+        90% { z-index: 2; }
+    }
+
+    @media only screen and (max-width: 600px) {
+        #brillo { font-size: 22px; }
+        
+        .galeria {
+            width: 150px;
+            margin-left: 60px;
+        }
+    }
+
+    footer {
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+        font-size: 18px;
+        color: white;
+        background-color: rgba(255, 20, 147, 0.8);
+        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    header {
+        width: 100%;
+        background-color: #d63384; /* Rosa oscuro */
+        color: white;
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+        font-size: 25px;
+        padding: 15px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+    }
+
+
+
+</style>
+<body>
+
+    <header>
+        <h1>BRITANY</h1>
+    </header>
+    
+
+    <section>
+        <div id="encabezado-container">
+            <div id="brillo">¡Ya Un Año Mi Amor! 💞</div>
+        </div>
+        
+        <div class="galeria">
+            <img src="https://github.com/JesusSantiago2004/ANTONY2/blob/main/1.jpg?raw=true" >
+            <img src="https://github.com/JesusSantiago2004/ANTONY2/blob/main/2.jpg?raw=true" >
+            <img src="https://github.com/JesusSantiago2004/ANTONY2/blob/main/3.jpg?raw=true" >
+            <img src="https://github.com/JesusSantiago2004/ANTONY2/blob/main/4.jpg?raw=true" >
+            <img src="https://github.com/JesusSantiago2004/ANTONY2/blob/main/5.jpg?raw=true" >
+        </div>
+    </section>
+
+    <footer>
+        By Antony💞20/02/2024
+    </footer>
+       
+</body>
+</html>
